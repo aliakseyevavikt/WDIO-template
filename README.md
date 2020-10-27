@@ -6,7 +6,7 @@ https://webdriver.io/docs/gettingstarted.html
 ### **To run tests:**
 * Clone repository
 * Run `npm install`
-* Run `npm test`
+* Run `npx wdio wdio.conf.js`
 
 ### **WebDriverIO v6 project setup from scratch:**
 1. Create new NodeJS project (or run `npm init` inside existing directory)
