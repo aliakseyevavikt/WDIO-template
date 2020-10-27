@@ -61,12 +61,9 @@ Replace `beforeTest` function in wdio.conf js with following:
   },
 ```
 
-8.Replace `logLevel` function in wdio.conf js with following:
-```logLevel: 'silent',
-```
+8.Replace `logLevel` function in wdio.conf js with following: `logLevel: 'silent',`
 
-
-### 9. To run your tests use `npx wdio wdio.conf.js`
+9. To run your tests use `npx wdio wdio.conf.js`
 
 ### **Add Allure Reporter to existing WDIO framework:**
 1. Install Allure Reporter `npm install @wdio/allure-reporter --save-dev`
