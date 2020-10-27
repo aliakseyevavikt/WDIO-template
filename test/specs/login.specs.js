@@ -1,0 +1,14 @@
+import LoginPage from '../pageObjects/login.page';
+import SecurePage from '../pageObjects/secure.page';
+import {loginPageTestResults} from '../testResult/login.testResult';
+import {user} from '../data/login.data';
+
+describe('My Login application', () => {
+    it('should login with valid credentials', () => {
+        LoginPage.open();
+        LoginPage.login(user.email, user.password);
+        expect(SecurePage.flashAlert.getText()).eq(loginPageTestResults.flashAlert);
+    });
+});
+
+
