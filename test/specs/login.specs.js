@@ -7,8 +7,6 @@ describe('My Login application', () => {
     it('should login with valid credentials', () => {
         LoginPage.open();
         LoginPage.login(user.email, user.password);
-        expect(SecurePage.flashAlert.getText()).eq(loginPageTestResults.flashAlert);
+        expect(SecurePage.flashAlert.getText()).to.equal(loginPageTestResults.flashAlert);
     });
 });
-
-

@@ -41,7 +41,8 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    // !!!!!how many windows open at the same time!!!
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -183,6 +184,11 @@ exports.config = {
      */
     // before: function (capabilities, specs) {
     // },
+
+    // add chai library to all tests
+    before: function (capabilities, specs) {
+        expect = require('chai').expect;
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -199,10 +205,12 @@ exports.config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    beforeTest: function () {
-        const chai = require('chai');
-        global.expect = chai.expect;
-    },
+    // Another way to add chai to all tests
+    // beforeTest: function () {
+    // const chai = require('chai');
+    // global.expect = chai.expect;
+
+    // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
