@@ -88,6 +88,7 @@ exports.config = {
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
     bail: 0,
+    screenshotPath: './errorShots/',
     //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
@@ -131,9 +132,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
+    reporters: ['spec', ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
 
-    //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
@@ -254,6 +258,7 @@ exports.config = {
      */
     // after: function (result, capabilities, specs) {
     // },
+
     /**
      * Gets executed right after terminating the webdriver session.
      * @param {Object} config wdio configuration object
